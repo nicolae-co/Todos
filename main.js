@@ -20,10 +20,12 @@ function renderTasks() {
   for (let i = 0; i < tasks.length; i++) {
       // create a new task element
       const task = document.createElement("div");
-      task.classList.add("task");
+      task.classList.add("task", "col-6", "bg-secondary", "text-white", "py-1","border", "border-primary");
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      checkbox.checked = tasks[i].completed;
+    checkbox.checked = tasks[i].completed;
+    const checkboxText = document.createElement("span");
+    checkboxText.innerText = "Complete";
 
   // create a label for the task
   const label = document.createElement("h3");
@@ -35,8 +37,9 @@ function renderTasks() {
     });
     // if the completed flag is checked, changes the background and hides the completed checkbox
     if (tasks[i].completed) {
-      label.classList.add("bg-danger");
-      checkbox.classList.add("d-none")
+      label.classList.add("bg-light", "text-dark");
+      checkbox.classList.add("d-none");
+      checkboxText.classList.add("d-none");
     }
 
   // create a delete button
@@ -50,9 +53,10 @@ function renderTasks() {
   });
 
 // append the checkbox, label, and delete button to the task element
-  task.appendChild(checkbox);
-  task.appendChild(label);
-  task.appendChild(deleteButton);
+    task.appendChild(label);
+    task.appendChild(checkboxText);
+    task.appendChild(checkbox);
+    task.appendChild(deleteButton);
 
   // append the task element to the task list
     taskList.appendChild(task);
