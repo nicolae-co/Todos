@@ -1,7 +1,18 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    background: url(https://cdn.discordapp.com/ephemeral-attachments/1008567215739650078/1059056823547732070/progress_image_100_e38e7544-7e5d-48e2-8fad-a3b2e0fb9452.webp) no-repeat center/cover fixed;
+    overflow-y: scroll
+}
+
+.glass-container{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
 }
 
 

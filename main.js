@@ -20,7 +20,7 @@ function renderTasks() {
   for (let i = 0; i < tasks.length; i++) {
       // create a new task element
     const task = document.createElement("div");
-    task.classList.add("task", "col-12", "bg-secondary", "text-white", "py-1","border", "border-primary");
+    task.classList.add("task", "col-12", "text-black", "py-1", "glass-container");
     const checkbox = document.createElement("input");
     checkbox.classList.add("d-none");
     checkbox.type = "checkbox";
@@ -38,7 +38,7 @@ function renderTasks() {
 
   // create a label for the task
   const label = document.createElement("h3");
-    label.innerText = tasks[i].title;
+    label.innerText =`${i+1}. ${tasks[i].title}`;
     label.classList.add("text-center");
     checkbox.addEventListener("change", () => {
     // toggle the completed flag when the checkbox is checked/unchecked
@@ -55,22 +55,17 @@ function renderTasks() {
   // create a delete button
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete", "btn", "btn-danger");
-  deleteButton.innerText = "Delete";
+  deleteButton.innerHTML = '<i class="bi bi-trash"></i>';
   deleteButton.addEventListener("click", () => {
       // remove the task when the delete button is clicked
       tasks.splice(i, 1);
       renderTasks();
   });
 
-    // create a edit button
-    const editButton = document.createElement("button");
-    editButton.classList.add("edit", "btn", "btn-info");
-    editButton.innerText = "Edit";
     
 // append the checkbox, label, and delete button to the task element
     btnContainer.appendChild(checkboxText);
     btnContainer.appendChild(checkbox);
-    btnContainer.appendChild(editButton);
     btnContainer.appendChild(deleteButton);
     
     task.appendChild(label);
