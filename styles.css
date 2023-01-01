@@ -1,12 +1,9 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    background: url(https://cdn.discordapp.com/ephemeral-attachments/1008567215739650078/1059056823547732070/progress_image_100_e38e7544-7e5d-48e2-8fad-a3b2e0fb9452.webp) no-repeat center/cover fixed;
-    overflow-y: scroll
 }
 
 .glass-container{
@@ -14,5 +11,23 @@ body{
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
 }
+.task{
+    box-sizing: border-box;
+}
 
+.custom-button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
 
+.green{
+    background-color: #5cb85c;
+}
+
+.red{
+    background-color: #d9534f;
+}

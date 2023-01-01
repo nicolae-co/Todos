@@ -20,15 +20,16 @@ function renderTasks() {
   for (let i = 0; i < tasks.length; i++) {
       // create a new task element
     const task = document.createElement("div");
-    task.classList.add("task", "col-12", "text-black", "py-1", "glass-container");
+    task.classList.add("task", "col-11", "text-black",
+                        "py-1", "my-1", "glass-container");
     const checkbox = document.createElement("input");
     checkbox.classList.add("d-none");
     checkbox.type = "checkbox";
     checkbox.id = i;
     checkbox.checked = tasks[i].completed;
     const checkboxText = document.createElement("label");
-    checkboxText.classList.add("btn", "btn-success")
-    checkboxText.innerText = "Complete";
+    checkboxText.classList.add("custom-button", "green")
+    checkboxText.innerHTML = '<i class="bi bi-check-lg"></i>';
     checkboxText.htmlFor = i;
 
 
@@ -47,14 +48,14 @@ function renderTasks() {
     });
     // if the completed flag is checked, changes the background and hides the completed checkbox
     if (tasks[i].completed) {
-      label.classList.add("bg-light", "text-dark");
+      label.classList.add("bg-success", "text-white", "rounded");
       checkbox.classList.add("d-none");
       checkboxText.classList.add("d-none");
     }
 
   // create a delete button
   const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete", "btn", "btn-danger");
+  deleteButton.classList.add("custom-button", "red");
   deleteButton.innerHTML = '<i class="bi bi-trash"></i>';
   deleteButton.addEventListener("click", () => {
       // remove the task when the delete button is clicked
